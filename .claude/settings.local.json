@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew list *)",
+      "Read(//usr/local/Cellar/whisper-cpp/1.8.4/share/whisper-cpp/**)",
+      "Read(//opt/homebrew/share/**)",
+      "Bash(ffmpeg -y -i public/video.mp4 -ss 00:00:01 -frames:v 1 public/poster.jpg)",
+      "Bash(curl -sL -o models/ggml-base.en.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.en.bin)",
+      "Bash(whisper-cli -m models/ggml-base.en.bin -f audio.wav --output-vtt -of public/captions)"
+    ]
+  }
+}
