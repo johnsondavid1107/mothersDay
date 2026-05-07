@@ -11,7 +11,7 @@ function tsToSeconds(ts: string): number {
   let h = 0, m = 0, s = 0;
   if (parts.length === 3) [h, m, s] = parts;
   else if (parts.length === 2) [m, s] = parts;
-  else [s] = parts;
+  else[s] = parts;
   return h * 3600 + m * 60 + s + Number(`0.${ms}`);
 }
 
@@ -64,7 +64,7 @@ export default function SyncedCaption({ currentTime }: { currentTime: number }) 
     fetch("/words.vtt")
       .then((r) => r.text())
       .then((t) => mounted && setWords(parseWordVtt(t)))
-      .catch(() => {});
+      .catch(() => { });
     return () => {
       mounted = false;
     };
@@ -101,7 +101,7 @@ export default function SyncedCaption({ currentTime }: { currentTime: number }) 
               transition={{ duration: 0.5 }}
               className="font-serif italic text-ink/60 text-lg md:text-xl"
             >
-              Press play to hear me, Mom.
+              Press play.
             </motion.p>
           ) : (
             <motion.p
@@ -126,8 +126,8 @@ export default function SyncedCaption({ currentTime }: { currentTime: number }) 
                       color: isCurrent
                         ? "#A85C5C"
                         : spoken
-                        ? "#3A2E2A"
-                        : "rgba(58,46,42,0.28)",
+                          ? "#3A2E2A"
+                          : "rgba(58,46,42,0.28)",
                       textShadow: isCurrent ? "0 0 14px rgba(201,165,91,0.35)" : "none",
                     }}
                   >
@@ -149,9 +149,8 @@ export default function SyncedCaption({ currentTime }: { currentTime: number }) 
             return (
               <span
                 key={i}
-                className={`h-1.5 w-1.5 rounded-full transition-colors duration-500 ${
-                  filled ? "bg-rose" : "bg-rose/20"
-                }`}
+                className={`h-1.5 w-1.5 rounded-full transition-colors duration-500 ${filled ? "bg-rose" : "bg-rose/20"
+                  }`}
               />
             );
           })}
